@@ -21,7 +21,7 @@ const LoginScreen = ({ navigation }) => {
         <TextInput placeholder="Enter User Name" style={styles.input} placeholderTextColor="#555" />
         <TextInput placeholder="Enter User Password" secureTextEntry style={styles.input} placeholderTextColor="#555" />
 
-        <TouchableOpacity style={styles.loginBtn} onPress={() => navigation.navigate('Home')}>
+        <TouchableOpacity style={styles.loginBtn} onPress={() => navigation.navigate('Drawer')}>
           <Text style={styles.loginText}>Login</Text>
         </TouchableOpacity>
       </View>

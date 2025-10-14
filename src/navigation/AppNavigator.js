@@ -5,6 +5,7 @@ import LoginScreen from '../screens/LoginScreen';
 import HomeScreen from '../screens/HomeScreen';
 import CreateAccount from '../screens/CreateAccount';
 import OTPVerification from '../screens/OTPVerification';
+import DrawerNavigator from '../navigation/DrawerNavigator';
 
 const Stack = createNativeStackNavigator();
 
@@ -16,6 +17,7 @@ const AppNavigator = () => {
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="CreateAccount" component={CreateAccount} />
         <Stack.Screen name="verification" component={OTPVerification} />
+        <Stack.Screen name="Drawer" component={DrawerNavigator} />
       </Stack.Navigator>
     </NavigationContainer>
   )

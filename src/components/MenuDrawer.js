@@ -19,8 +19,8 @@ const MenuDrawer = ({ navigation }) => {
 export default MenuDrawer;
 
 const styles = StyleSheet.create({
-  container: { flex:1, backgroundColor:'#fff' },
-  header: { padding:20, backgroundColor:'#1A781D', justifyContent:'center', alignItems:'center' },
+  container: { flex:1,backgroundColor:'#1A781D', },
+  header: { padding:20, justifyContent:'center', alignItems:'center' },
   headerText: { color:'#fff', fontSize:20, fontWeight:'600' },
   menu: { flex:1, padding:20 },
   menuItem: { paddingVertical:15 },
