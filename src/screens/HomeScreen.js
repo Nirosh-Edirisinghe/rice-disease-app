@@ -1,7 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Image, ImageBackground } from 'react-native';
 import highRisk from '../../assets/images/desease.png';
-import lowRisk from '../../assets/images/lowrisk.png';
 
 const HomeScreen = ({ navigation }) => {
   return (
@@ -14,7 +13,7 @@ const HomeScreen = ({ navigation }) => {
       <View style={styles.container}>
 
         {/* High Risk Card */}
-        <View style={styles.card}>
+        <TouchableOpacity style={styles.card} onPress={() => navigation.navigate('HighRiskTime')}>
           <ImageBackground
             source={highRisk}
             style={styles.imageBackground}
@@ -24,7 +23,8 @@ const HomeScreen = ({ navigation }) => {
               High{'\n'}Risk{'\n'}Time
             </Text>
           </ImageBackground>
-        </View>
+        </TouchableOpacity>
+
 
 
         {/* Low Risk Card */}
@@ -39,7 +39,7 @@ const HomeScreen = ({ navigation }) => {
         </View>
 
         {/* Enter Button */}
-        <TouchableOpacity style={styles.enterButton}>
+        <TouchableOpacity style={styles.enterButton} >
           <Text style={styles.enterText}>Enter...</Text>
         </TouchableOpacity>
 
@@ -94,7 +94,7 @@ const styles = StyleSheet.create({
     lineHeight: 30,
   },
   enterButton: {
-    backgroundColor: '#19a31eff',
+    backgroundColor: '#1A781D',
     width: '70%',
     paddingVertical: 18,
     borderRadius: 15,

@@ -4,13 +4,30 @@ import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 const MenuDrawer = ({ navigation }) => {
   return (
     <View style={styles.container}>
-      <View style={styles.header}>
-        <Text style={styles.headerText}>Menu</Text>
-      </View>
-      <View style={styles.menu}>
-        <TouchableOpacity style={styles.menuItem} onPress={() => navigation.navigate('Home')}>
-          <Text style={styles.menuText}>Home</Text>
-        </TouchableOpacity>
+      <Text style={styles.header}>MENU</Text>
+
+      <View style={styles.menuContainer}>
+        <View style={styles.menu} >
+          <TouchableOpacity style={styles.menuItem}>
+            <Text style={styles.menuText}>SEE BEST TIME SERIES</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.menuItem}>
+            <Text style={styles.menuText}>MEDICINE FOR DISEASES</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.menuItem}>
+            <Text style={styles.menuText}>SETTINGS</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.menuItem}>
+            <Text style={styles.menuText}>LOG OUT</Text>
+          </TouchableOpacity>
+        </View>
+
+        <View style={styles.footer}>
+          <Text style={styles.footerText}>RESEARCH NAME</Text>
+        </View>
       </View>
     </View>
   );
@@ -19,10 +36,46 @@ const MenuDrawer = ({ navigation }) => {
 export default MenuDrawer;
 
 const styles = StyleSheet.create({
-  container: { flex:1,backgroundColor:'#1A781D', },
-  header: { padding:20, justifyContent:'center', alignItems:'center' },
-  headerText: { color:'#fff', fontSize:20, fontWeight:'600' },
-  menu: { flex:1, padding:20 },
-  menuItem: { paddingVertical:15 },
-  menuText: { fontSize:16, color:'#1A781D', fontWeight:'500' },
+  container: {
+    flex: 1,
+    backgroundColor: '#1A781D',
+    borderTopRightRadius: 100,
+    borderBottomRightRadius: 100,
+    overflow: 'hidden',
+    paddingVertical: 40,
+  },
+  header: {
+    textAlign: 'center',
+    fontSize: 25,
+    fontWeight: 'bold',
+    color: '#b4e2b4',
+  },
+  menuContainer: {
+    flex: 1,
+    justifyContent: 'space-between', 
+    paddingHorizontal: 25,
+    paddingTop: 100,
+  },
+  menu: {
+    gap: 20,
+  },
+  menuItem: {
+    borderBottomWidth: 1,
+    borderBottomColor: '#a0dba0',
+    paddingBottom: 10,
+  },
+  menuText: {
+    fontSize: 16,
+    fontWeight: '500',
+    color: '#fff',
+    paddingHorizontal: 10,
+  },
+  footer: {
+    paddingBottom: 40,
+  },
+  footerText: {
+    color: '#fff',
+    fontWeight: '500',
+    fontSize: 15,
+  },
 });
