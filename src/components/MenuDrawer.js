@@ -12,7 +12,7 @@ const MenuDrawer = ({ navigation }) => {
             <Text style={styles.menuText}>SEE BEST TIME SERIES</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.menuItem}>
+          <TouchableOpacity style={styles.menuItem} onPress={() => navigation.navigate('Medicine')}>
             <Text style={styles.menuText}>MEDICINE FOR DISEASES</Text>
           </TouchableOpacity>
 
