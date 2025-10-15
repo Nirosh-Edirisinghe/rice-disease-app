@@ -16,7 +16,7 @@ const MenuDrawer = ({ navigation }) => {
             <Text style={styles.menuText}>MEDICINE FOR DISEASES</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.menuItem}>
+          <TouchableOpacity style={styles.menuItem} onPress={() => navigation.navigate('Settings')}>
             <Text style={styles.menuText}>SETTINGS</Text>
           </TouchableOpacity>
 
