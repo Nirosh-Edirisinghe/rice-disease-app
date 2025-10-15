@@ -39,7 +39,7 @@ const HomeScreen = ({ navigation }) => {
         </View>
 
         {/* Enter Button */}
-        <TouchableOpacity style={styles.enterButton} >
+        <TouchableOpacity style={styles.enterButton}  >
           <Text style={styles.enterText}>Enter...</Text>
         </TouchableOpacity>
 
