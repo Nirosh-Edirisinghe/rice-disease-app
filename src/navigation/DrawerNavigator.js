@@ -8,6 +8,10 @@ const Drawer = createDrawerNavigator();
 const DrawerNavigator = () => {
   return (
     <Drawer.Navigator
+    screenOptions={{ headerShown: false,
+      sceneContainerStyle: { backgroundColor: 'transparent', paddingBottom: 0 },
+     }}
+    
       initialRouteName="Home"
       drawerContent={(props) => <MenuDrawer {...props} />}
     >
