@@ -1,7 +1,7 @@
-import { StyleSheet, Text, View, TouchableOpacity, ImageBackground, Image } from 'react-native'
+import { StyleSheet, Text, View, TouchableOpacity, ImageBackground, Image, ScrollView } from 'react-native'
 import React from 'react'
 
-const Medicine = ({ navigation }) => {
+const Solution = ({ navigation }) => {
   return (
     <ImageBackground
       source={require('../../assets/images/bg-image.png')}
@@ -17,24 +17,30 @@ const Medicine = ({ navigation }) => {
             resizeMode="contain"
           />
         </TouchableOpacity>
-        <Text style={styles.title}>Select Disease</Text>
-        <View style={{ width: 35 }} /> {/* Spacer for balance */}
+        <Text style={styles.title}>Disease Name</Text>
+        <View style={{ width: 35 }} /> {/* Spacer */}
       </View>
 
-      {/* Disease List */}
-      <View style={styles.listContainer}>
-        <TouchableOpacity style={styles.diseaseBtn} onPress={() => navigation.navigate('Solution')}>
-          <Text style={styles.diseaseText}>Disease Name 01</Text>
-        </TouchableOpacity>
+      {/* Content */}
+      <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
+        {/* Disease Image */}
+        <Image
+          source={require('../../assets/images/desease.png')} // Replace with your real image
+          style={styles.diseaseImage}
+          resizeMode="cover"
+        />
 
-        <TouchableOpacity style={[styles.diseaseBtn, styles.diseaseBtnLarge]}>
-          <Text style={styles.diseaseText}>Disease Name 02</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.diseaseBtn}>
-          <Text style={styles.diseaseText}>Disease Name 03</Text>
-        </TouchableOpacity>
-      </View>
+        {/* Solution Section */}
+        <View style={styles.solutionContainer}>
+          <Text style={styles.solutionTitle}>Solution</Text>
+          <Text style={styles.solutionText}>
+            Use of resistant rice varieties.{'\n'}
+            Crop rotation and proper field drainage.{'\n'}
+            Balanced fertilizer use.{'\n'}
+            Fungicide application when needed.
+          </Text>
+        </View>
+      </ScrollView>
 
       {/* Bottom Menu Button */}
       <TouchableOpacity style={styles.menuBtn} onPress={() => navigation.openDrawer()}>
@@ -48,7 +54,7 @@ const Medicine = ({ navigation }) => {
   )
 }
 
-export default Medicine
+export default Solution
 
 const styles = StyleSheet.create({
   bg: {
@@ -79,30 +85,36 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     flex: 1,
   },
-  listContainer: {
-    marginTop: 80,
+  scrollContent: {
     alignItems: 'center',
+    paddingBottom: 100,
+  },
+  diseaseImage: {
     width: '100%',
-    gap: 25,
+    height: 220,
+    borderRadius: 15,
+    marginTop: 40,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.5,
+    elevation: 5,
   },
-  diseaseBtn: {
-    backgroundColor: '#1A781D',
-    paddingVertical: 15,
-    paddingHorizontal: 30,
-    borderRadius: 30,
-    width: '80%',
-    alignItems: 'center',
-    elevation: 3,
+  solutionContainer: {
+    width: '85%',
+    marginTop: 30,
   },
-  diseaseBtnLarge: {
-    borderRadius: 20,
-    paddingVertical: 25,
-  },
-  diseaseText: {
-    color: '#fff',
-    fontSize: 18,
+  solutionTitle: {
+    fontSize: 20,
+    color: '#000',
     fontWeight: '700',
-    textAlign: 'center',
+    marginBottom: 8,
+  },
+  solutionText: {
+    fontSize: 16,
+    color: '#000',
+    fontWeight: '500',
+    lineHeight: 24,
   },
   menuBtn: {
     position: 'absolute',

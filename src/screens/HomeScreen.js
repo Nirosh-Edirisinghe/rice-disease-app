@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Image, ImageBackground } from 'react-native';
 import highRisk from '../../assets/images/desease.png';
+import lowRisk from '../../assets/images/desease1.png';
 
 const HomeScreen = ({ navigation }) => {
   return (
@@ -13,30 +14,37 @@ const HomeScreen = ({ navigation }) => {
       <View style={styles.container}>
 
         {/* High Risk Card */}
-        <TouchableOpacity style={styles.card} onPress={() => navigation.navigate('HighRiskTime')}>
+        <TouchableOpacity
+          activeOpacity={0.8}
+          style={styles.card}
+          onPress={() => navigation.navigate('HighRiskTime')}
+        >
           <ImageBackground
             source={highRisk}
             style={styles.imageBackground}
-            imageStyle={{ borderRadius: 15 }}
+            imageStyle={styles.imageStyle}
           >
-            <Text style={[styles.cardText, { color: '#000' }]}>
+            <Text style={[styles.cardText, { color: '#fff' }]}>
               High{'\n'}Risk{'\n'}Time
             </Text>
           </ImageBackground>
         </TouchableOpacity>
 
-
-
         {/* Low Risk Card */}
-        <View style={styles.card}>
+        <TouchableOpacity
+          activeOpacity={0.8}
+          style={styles.card}
+        >
           <ImageBackground
-            source={highRisk}
+            source={lowRisk}
             style={styles.imageBackground}
-            imageStyle={{ borderRadius: 15 }}
+            imageStyle={styles.imageStyle}
           >
-            <Text style={[styles.cardText, { color: '#000' }]}>Low{'\n'}Risk{'\n'}Time</Text>
+            <Text style={[styles.cardText, { color: '#000' }]}>
+              Low{'\n'}Risk{'\n'}Time
+            </Text>
           </ImageBackground>
-        </View>
+        </TouchableOpacity>
 
         {/* Enter Button */}
         <TouchableOpacity style={styles.enterButton}  >
@@ -70,29 +78,29 @@ const styles = StyleSheet.create({
     height: 120,
     marginVertical: 10,
     borderRadius: 15,
-    overflow: 'hidden',
-    shadowColor: '#000',
-    shadowOpacity: 0.2,
-    shadowRadius: 5,
+    overflow: 'hidden', // ensures image fits border radius
     elevation: 5,
-    backgroundColor: '#fff', 
+    backgroundColor: '#fff',
   },
 
   imageBackground: {
-    position: 'absolute',
-    width: '100%',
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
+    flex: 1, // fill the entire card
     justifyContent: 'center',
+    alignItems: 'flex-start',
     paddingLeft: 20,
   },
+
+  imageStyle: {
+    borderRadius: 15,
+    resizeMode: 'cover', 
+  },
+
   cardText: {
     fontSize: 26,
     fontWeight: 'bold',
     lineHeight: 30,
   },
+
   enterButton: {
     backgroundColor: '#1A781D',
     width: '70%',

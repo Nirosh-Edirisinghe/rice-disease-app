@@ -15,11 +15,14 @@ const DiseaseDetails = ({ navigation }) => {
           <Image source={require('../../assets/images/back-icon.png')} style={styles.iconImage} />
         </TouchableOpacity>
 
-        {/* Main Disease Image */}
-        <Image
-          source={require('../../assets/images/graph.png')}
-          style={styles.diseaseImage}
-        />
+
+        {/* Graph Image Section */}
+        <View style={styles.graphCard}>
+          <Image
+            source={require('../../assets/images/graph.png')}
+            style={styles.graphImage}
+          />
+        </View>
 
         {/* Title */}
         <Text style={styles.title}>High Risk Time</Text>
@@ -32,10 +35,12 @@ const DiseaseDetails = ({ navigation }) => {
             <Text style={styles.title1}>Risk</Text>
           </View>
 
-          <Image
-            source={require('../../assets/images/graph1.png')}
-            style={styles.smallDiseaseImage}
-          />
+          <View style={styles.graphCard1}>
+            <Image
+              source={require('../../assets/images/graph1.png')}
+              style={styles.graphImage}
+            />
+          </View>
         </View>
 
         {/* Menu Icon (Bottom Left) */}
@@ -76,12 +81,42 @@ const styles = StyleSheet.create({
     width: 40,
     height: 40,
   },
-  diseaseImage: {
-    width: 350,
+  graphCard: {
+    width: '85%',
     height: 200,
-    borderRadius: 30,
-    marginTop: 60,
+    marginTop: 40,
+    borderRadius: 10,
+    backgroundColor: '#fff',
+    elevation: 5,
+    shadowColor: '#000',
+    shadowOpacity: 0.2,
+    shadowRadius: 5,
+    shadowOffset: { width: 0, height: 3 },
+    overflow: 'hidden', // ensures image respects rounded corners
+    alignSelf: 'center', // centers horizontally
   },
+  graphCard1: {
+    width: '100%',
+    height: 200,
+    marginVertical: 20,
+    borderRadius: 30,
+    backgroundColor: '#fff',
+    elevation: 5,
+    shadowColor: '#000',
+    shadowOpacity: 0.2,
+    shadowRadius: 5,
+    shadowOffset: { width: 0, height: 3 },
+    overflow: 'hidden', // ensures image respects rounded corners
+    alignSelf: 'center', // centers horizontally
+  },
+
+  graphImage: {
+    width: '100%',
+    height: '100%',
+    resizeMode: 'cover',
+    borderRadius: 30, // keeps smooth corners
+  },
+
   title: {
     fontSize: 20,
     fontWeight: '700',
